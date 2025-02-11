@@ -8,12 +8,14 @@ protocols = ["No Authentication", "DSA", "ECDSA", "EdDSA"]
 # x_values = np.array([0, 37, 74, 112, 148, 185])  # 各データポイントのインデックス
 x_values = np.array([0, 37, 74, 112, 148, 185])
 y_values = np.array([
+    # simulation time
     # [0, 0, 0, 0], 
     # [14.1802, 69.9882, 55.0108, 24.4069],
     # [50.5984, 267.433, 194.408, 89.2728],
     # [110.405, 625.504, 436.926, 200.901],
     # [196.971, 1172.57, 910.373, 431.346],
     # [345.059, 1908.7, 1324.55, 635.155]
+    # memory
     [68000, 68000, 68000, 68000],
     [70939.4, 72023.3, 93749.3, 80647.1],
     [74089.7, 74989.3, 151853, 106442],
@@ -48,10 +50,10 @@ for i, protocol in enumerate(protocols):
 
 # 軸ラベルとタイトル
 plt.xlabel("Number of Nodes", fontsize=14)
-plt.ylabel("Simulation Time [s]", fontsize=14)
+plt.ylabel("Memory Usage [KB]", fontsize=14) #ここいじる
 plt.legend()
 plt.grid(axis='y')
-plt.yticks(np.arange(0, np.max(y_values) + 40000, 100000))  # y軸のグリッドを200ごとに設定
+plt.yticks(np.arange(0, np.max(y_values) + 40000, 100000))  # y軸のグリッドを200ごとに設定 ここもいじる
 
 # グラフを表示
 plt.show()
